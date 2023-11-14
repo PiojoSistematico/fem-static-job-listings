@@ -4,14 +4,15 @@ export default {
   theme: {
     extend: {
       colors: {
-        "desaturated-dark-cyan": "#5ba4a4",
-        "light-cyan-background": "#effafa",
-        "light-cyan-filter": "#eef6f6",
-        "dark-cyan": "#7b8e8e",
-        "very-dark-cyan": "#2c3a3a",
+        "primary-1": "#5ba4a4",
+        "neutral-1": "#ffffff",
+        "neutral-2": "#effafa",
+        "neutral-3": "#eef6f6",
+        "neutral-4": "#7b8e8e",
+        "neutral-5": "#2c3a3a",
       },
       fontFamily: {
-        league: ["League Spartan", "sans-serif"],
+        LeagueSpartan: ["LeagueSpartan", "sans-serif"],
       },
     },
   },
