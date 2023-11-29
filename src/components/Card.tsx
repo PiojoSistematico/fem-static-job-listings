@@ -1,3 +1,5 @@
+import { Button } from "react-aria-components";
+
 type CardProps = {
   info: {
     id: number;
@@ -14,9 +16,13 @@ type CardProps = {
     languages: string[];
     tools: string[];
   };
+  handleAddFilter: (word: string) => void;
 };
 
-const Card: React.FunctionComponent<CardProps> = ({ info }) => {
+const Card: React.FunctionComponent<CardProps> = ({
+  info,
+  handleAddFilter,
+}) => {
   return (
     <article
       className={`${
@@ -54,30 +60,38 @@ const Card: React.FunctionComponent<CardProps> = ({ info }) => {
         </div>
       </div>
       <div className="flex flex-row flex-wrap items-center gap-4">
-        <span className="bg-neutral-2 text-primary-1 font-bold px-2 py-1 rounded-md">
+        <Button
+          onPress={(e) => handleAddFilter(e.target.innerHTML)}
+          className="bg-neutral-2 text-primary-1 font-bold px-2 py-1 rounded-md"
+        >
           {info.role}
-        </span>
-        <span className="bg-neutral-2 text-primary-1 font-bold px-2 py-1 rounded-md">
+        </Button>
+        <Button
+          onPress={(e) => handleAddFilter(e.target.innerHTML)}
+          className="bg-neutral-2 text-primary-1 font-bold px-2 py-1 rounded-md"
+        >
           {info.level}
-        </span>
+        </Button>
         {info.tools && info.tools.length > 0
           ? info.tools.map((elem, index) => (
-              <span
+              <Button
+                onPress={(e) => handleAddFilter(e.target.innerHTML)}
                 className="bg-neutral-2 text-primary-1 font-bold px-2 py-1 rounded-md"
                 key={index}
               >
                 {elem}
-              </span>
+              </Button>
             ))
           : null}
         {info.languages && info.languages.length > 0
           ? info.languages.map((elem, index) => (
-              <span
+              <Button
+                onPress={(e) => handleAddFilter(e.target.innerHTML)}
                 className="bg-neutral-2 text-primary-1 font-bold px-2 py-1 rounded-md"
                 key={index}
               >
                 {elem}
-              </span>
+              </Button>
             ))
           : null}
       </div>
