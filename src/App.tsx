@@ -59,13 +59,29 @@ function App() {
             title="job post"
             className="flex flex-col gap-8 bg-neutral-2"
           >
-            {data.map((elem, index) => (
-              <Card
-                key={index}
-                info={elem}
-                handleAddFilter={handleAddFilter}
-              ></Card>
-            ))}
+            {filter.length > 0
+              ? data
+                  .filter((elem) =>
+                    filter.every((filterElem) =>
+                      elem.tools
+                        .concat(elem.languages, elem.role, elem.level)
+                        .includes(filterElem)
+                    )
+                  )
+                  .map((elem, index) => (
+                    <Card
+                      key={index}
+                      info={elem}
+                      handleAddFilter={handleAddFilter}
+                    ></Card>
+                  ))
+              : data.map((elem, index) => (
+                  <Card
+                    key={index}
+                    info={elem}
+                    handleAddFilter={handleAddFilter}
+                  ></Card>
+                ))}
           </section>
         </section>
       </main>
