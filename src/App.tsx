@@ -20,19 +20,19 @@ function App() {
 
   return (
     <>
-      <header className="bg-[url('src/assets/images/bg-header-mobile.svg')] h-36 bg-primary-1"></header>
+      <header className="bg-[url('src/assets/images/bg-header-mobile.svg')] h-36 bg-primary-1 md:bg-[url('src/assets/images/bg-header-desktop.svg')]"></header>
       <main className="font-LeagueSpartan bg-neutral-2 p-8 text-base font-medium">
         <section
           className={`relative ${
             filter.length == 0 ? "top-0 " : "-top-8 -translate-y-8"
-          } left-0  w-full bg-neutral-2 flex flex-col gap-8 rounded-md`}
+          } left-1/2 -translate-x-1/2 md:w-[700px] lg:w-[1000px] bg-neutral-2 flex flex-col gap-8 rounded-md`}
         >
           {filter && filter.length > 0 ? (
             <section
               title="filter"
-              className="p-4 bg-neutral-1 over rounded-md flex flex-row gap-4 items-center justify-between"
+              className="p-4 bg-neutral-1 over rounded-md flex flex-row gap-4 items-center justify-between "
             >
-              <div className="flex flex-row gap-2 flex-wrap items-center">
+              <div className="flex flex-row gap-2 flex-wrap items-center ">
                 {filter.map((elem, index) => (
                   <div className="flex flex-row items-center" key={index}>
                     <span className="bg-neutral-2 text-primary-1 font-bold px-2 py-1 rounded-l-md">
@@ -57,7 +57,7 @@ function App() {
 
           <section
             title="job post"
-            className="flex flex-col gap-8 bg-neutral-2"
+            className="flex flex-col gap-8 bg-neutral-2 items-stretch md:items-center"
           >
             {filter.length > 0
               ? data

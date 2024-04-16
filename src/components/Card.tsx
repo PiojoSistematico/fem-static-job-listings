@@ -27,39 +27,41 @@ const Card: React.FunctionComponent<CardProps> = ({
     <article
       className={`${
         info.featured ? "border-primary-1" : "border-neutral-1"
-      } relative pb-4 pl-4 pr-4 py-8 bg-neutral-1 rounded-md shadow-lg shadow-neutral-3 border-l-4 border-solid flex flex-col gap-4`}
+      } relative pb-4 pl-4 pr-4 py-8 bg-neutral-1 rounded-md shadow-lg shadow-neutral-5/20 border-l-4 border-solid flex flex-col gap-4 lg:w-[1000px] md:w-[700px] md:flex-row md:items-center md:justify-between`}
     >
-      <picture className="absolute top-[-20px] left-[16px] w-12 h-12">
-        <img src={`src/assets/${info.logo.slice(1)}`} alt="Logo " />
-      </picture>
-      <div>
-        <div className="flex flex-col gap-4">
-          <div className="flex flex-row gap-4 items-center">
-            <h2 className="text-primary-1 font-bold">{info.company}</h2>
-            {info.new && (
-              <span className="bg-primary-1 text-neutral-1 uppercase px-2 rounded-xl">
-                New!
-              </span>
-            )}
-            {info.featured && (
-              <span className="bg-neutral-5 text-neutral-1 uppercase px-2 rounded-xl">
-                Featured
-              </span>
-            )}
-          </div>
+      <div className="flex flex-row items-center gap-8">
+        <picture className="absolute top-[-20px] left-[16px] w-12 h-12 md:relative md:top-0 md:left-0 md:w-16 md:h-16">
+          <img src={`src/assets/${info.logo.slice(1)}`} alt="Logo " />
+        </picture>
+        <div>
+          <div className="flex flex-col gap-4">
+            <div className="flex flex-row gap-4 items-center">
+              <h2 className="text-primary-1 font-bold">{info.company}</h2>
+              {info.new && (
+                <span className="bg-primary-1 text-neutral-1 uppercase px-2 rounded-xl">
+                  New!
+                </span>
+              )}
+              {info.featured && (
+                <span className="bg-neutral-5 text-neutral-1 uppercase px-2 rounded-xl">
+                  Featured
+                </span>
+              )}
+            </div>
 
-          <p className="font-bold">{info.position}</p>
-          <div className="flex flex-row gap-2 items-center text-neutral-4">
-            <span>{info.postedAt}</span>
-            <span>.</span>
-            <span>{info.contract}</span>
-            <span>.</span>
-            <span>{info.location}</span>
+            <p className="font-bold">{info.position}</p>
+            <div className="flex flex-row gap-2 items-center text-neutral-4">
+              <span>{info.postedAt}</span>
+              <span>.</span>
+              <span>{info.contract}</span>
+              <span>.</span>
+              <span>{info.location}</span>
+            </div>
+            <hr className="md:hidden" />
           </div>
-          <hr />
         </div>
       </div>
-      <div className="flex flex-row flex-wrap items-center gap-4">
+      <div className="flex flex-row flex-wrap items-center gap-4 md:w-6/12 md:justify-end">
         <Button
           onPress={(e) => handleAddFilter(e.target.innerHTML)}
           className="bg-neutral-2 text-primary-1 font-bold px-2 py-1 rounded-md"
