@@ -45,7 +45,7 @@ Users should be able to:
 
 ### React + Typescript Front-End Master Series (Intermediate and Advanced Challenges)
 
-If you are interested check out the other projects of the front end master challenges (Junior) that i solved with react + typescript (trying to learn both)
+If you are interested check out the other projects of the front end master challenges that i solved with react + typescript (trying to learn both)
 
 - [fem-bookmark-landing-page](https://github.com/PiojoSistematico/fem-bookmark-landing-page/)
 - [fem-calculator-app](https://github.com/PiojoSistematico/fem-calculator-app/)
