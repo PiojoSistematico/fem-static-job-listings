@@ -31,7 +31,7 @@ const Card: React.FunctionComponent<CardProps> = ({
     >
       <div className="flex flex-row items-center gap-8">
         <picture className="absolute top-[-20px] left-[16px] w-12 h-12 md:relative md:top-0 md:left-0 md:w-16 md:h-16">
-          <img src={`src/assets/${info.logo.slice(1)}`} alt="Logo " />
+          <img src={`${info.logo}`} alt="Logo" />
         </picture>
         <div>
           <div className="flex flex-col gap-4">

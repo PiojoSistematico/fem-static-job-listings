@@ -20,7 +20,7 @@ function App() {
 
   return (
     <>
-      <header className="bg-[url('src/assets/images/bg-header-mobile.svg')] h-36 bg-primary-1 md:bg-[url('src/assets/images/bg-header-desktop.svg')]"></header>
+      <header className="bg-[url('bg-header-mobile.svg')] h-36 bg-primary-1 md:bg-[url('bg-header-desktop.svg')]"></header>
       <main className="font-LeagueSpartan bg-neutral-2 p-8 text-base font-medium">
         <section
           className={`relative ${
